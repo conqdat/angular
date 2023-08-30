@@ -1,4 +1,11 @@
 <h1>Hello Dat Test git no proxy settings</h1>
+<h2>Current Name: {{ currentName }}</h2>
+
 <div *ngFor="let child of children">
-    <app-child [childName]="child.childName" [childName]="child.childName"></app-child>
+    <app-child
+      [childName]="child.childName"
+      [childAge]="child.childAge"
+      (emitName)="handleEmittedEvent($event)"
+    >
+    </app-child>
 </div>

@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learn-angular';
+  currentName: string = "Cong Dat";
+
   children = [
     {
       childAge: 18,
@@ -21,4 +23,8 @@ export class AppComponent {
       childName: "Cong Dat 20"
     },
   ]
+
+  handleEmittedEvent(name: string) {
+    this.currentName = name
+  }
 }
