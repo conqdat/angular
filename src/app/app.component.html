@@ -15,3 +15,10 @@
 <hr>
 
 <input [(ngModel)]="title" />
+
+<hr>
+<div [class.warning]="isWarning">
+    Hello tonggle
+</div>
+
+<button (click)="tonggleWarning()">Tonggle</button>

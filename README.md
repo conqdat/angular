@@ -9,4 +9,7 @@
     - `` <input type="text" [(ngModel)]="user.name" /> ``
     - `` <input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event" /> ``
 
-- test commit    
+- Binding class: 
+    - `` <div [class.warning]="isWarning"> ``
+    - `` <div [class.warning]="['1', '2']"> ``
+    - `` <div [class.warning]="{'is-Red: isRed'}"> ``    

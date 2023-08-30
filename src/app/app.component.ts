@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'learn-angular';
   name = 'Cong Dat';
+  isWarning = true;
 
   show() {
     console.log("Hello Dat");
+  }
+
+  tonggleWarning() {
+    this.isWarning = !this.isWarning
   }
 }
