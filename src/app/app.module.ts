@@ -8,12 +8,14 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { SignInRfComponent } from './sign-in-rf/sign-in-rf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    SignInRfComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
