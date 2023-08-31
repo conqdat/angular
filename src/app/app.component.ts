@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TestService } from "./test.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'learn-angular';
@@ -12,5 +13,11 @@ export class AppComponent {
   person = {
     name: "Cong Dat",
     age: 22
+  }
+
+
+  constructor(private testService: TestService) {}
+
+  handleTestService() {
   }
 }
