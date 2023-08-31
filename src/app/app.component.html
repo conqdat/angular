@@ -1,1 +1,7 @@
-<h1>Hello Dat Test git no proxy settings</h1>
+<h1> {{ 'Hello Dat Test git no proxy settings' | uppercase }} </h1>
+<h1> {{ 'Hello Dat Test git no proxy settings' | lowercase }} </h1>
+<h1>{{ Date.now() | date:'dd-mm-yyyy' }}</h1>
+<h1>{{ 2000 | currency:'VND'}}</h1>
+<h1> {{ 0.54 | percent }} </h1>
+<h2>{{ person | json }}</h2>
+<h2>{{ 'Test custom pipe' | myPipe }}</h2>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learn-angular';
+  protected readonly Date = Date;
+
+  person = {
+    name: "Cong Dat",
+    age: 22
+  }
 }
