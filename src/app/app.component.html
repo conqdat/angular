@@ -1,1 +1,16 @@
 <h1>Hello Dat Test git no proxy settings</h1>
+<h2 *ngIf="count > 0; else some"> Lớn hơn 0</h2>
+
+<ng-template #some>
+  <h2>Nhỏ hơn or bằng 0</h2>
+</ng-template>
+
+<h2>Count: {{ count }}</h2>
+<hr>
+<button (click)="handleIncreaseCount()">+</button>
+<button (click)="handleDecreaseCount()">-</button>
+<hr>
+<div *ngFor="let author of authors; count as total">
+  <h1>{{ author.id }} - {{ author.firstName }}</h1>
+</div>
+
