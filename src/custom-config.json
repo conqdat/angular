@@ -1,0 +1,6 @@
+{
+  "production": true,
+  "outputPath": "dist/custom",
+  "sourceMap": false,
+  "vendorChunk": false
+}

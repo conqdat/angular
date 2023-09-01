@@ -1,0 +1,8 @@
+<p>article-list works!</p>
+<a routerLink="/home">Back to Home !!!</a>
+<ul>
+  <li *ngFor="let article of articles$ | async">
+    <h1>{{ article.title }}</h1>
+    <a [routerLink]="['/articles/detail', article.slug]">detail</a>
+  </li>
+</ul>

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ArticleServiceService} from "../article-service.service";
+import {ArticleServiceService} from "../../article-service.service";
 import {filter, Observable, pluck, switchMap} from "rxjs";
 
 @Component({
