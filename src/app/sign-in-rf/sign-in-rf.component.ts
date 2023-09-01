@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, NgForm} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
+import {NoWhiteValidator} from "../shared/no-white.validator";
 
 @Component({
   selector: 'app-sign-in-rf',
@@ -11,23 +12,27 @@ export class SignInRfComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   // signInForm = new FormGroup({
-  //   username: new FormControl(""),
+  //   username: new FormControl("", [Validators.required, Validators.minLength(5)]),
   //   password: new FormControl(""),
   //   rememberMe: new FormControl("")
   // })
 
   signInForm = this.fb.group({
-    username: "",
-    password: "",
+    username: ["", Validators.minLength(5)],
+    password: ["",
+        Validators.compose([
+          NoWhiteValidator(),
+          Validators.minLength(6),
+        ])],
     rememberMe: ""
   })
 
   ngOnInit(): void {
-    this.signInForm.setValue({
-      username: "username",
-      password: "password",
-      rememberMe: ""
-    })
+    // this.signInForm.setValue({
+    //   username: "username",
+    //   password: "password",
+    //   rememberMe: ""
+    // })
   }
 
   handleSubmit() {

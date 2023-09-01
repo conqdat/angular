@@ -6,19 +6,26 @@
         <mat-label>Username</mat-label>
         <input matInput placeholder="Username" formControlName="username"/>
       </mat-form-field>
+      <div *ngIf="signInForm.invalid && signInForm.touched">
+        <mat-error *ngIf="signInForm.controls.username.hasError('required')">Username is required.</mat-error>
+        <mat-error *ngIf="signInForm.controls.username.hasError('minlength')"> > 5.</mat-error>
+      </div>
     </div>
     <div class="row-control">
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input type="password" matInput placeholder="Password" formControlName="password"/>
       </mat-form-field>
+      <div *ngIf="signInForm.invalid && signInForm.touched">
+        <mat-error>Password is required.</mat-error>
+      </div>
     </div>
     <div class="row-control">
       <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
     </div>
     <div class="row-control row-actions">
-      <button mat-raised-button color="primary" type="submit">Sign in</button>
+      <button [disabled]="signInForm.invalid" mat-raised-button color="primary" type="submit">Sign in</button>
     </div>
   </form>
-  <pre>{{ signInForm.value | json }}</pre>
+  <pre>{{ signInForm.errors | json }}</pre>
 </div>
