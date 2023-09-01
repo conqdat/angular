@@ -1,0 +1,10 @@
+<a routerLink="/home">Back to Home !!!</a>
+
+<ng-container *ngIf="article$ | async as article; else noArticle">
+  <h1>{{ article.title }}</h1>
+  <h1>{{ article.body }}</h1>
+</ng-container>
+
+<ng-template #noArticle>
+  Article Not found !
+</ng-template>
