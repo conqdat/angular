@@ -1,6 +1,7 @@
 import {Routes} from "@angular/router";
 import {ArticleListComponent} from "./article-list/article-list.component";
 import {ArticleDetailComponent} from "./article-detail/article-detail.component";
+import {ArticlesGuard} from "../guards/articles.guard";
 
 export const articleRoutes: Routes = [
   {
@@ -8,8 +9,11 @@ export const articleRoutes: Routes = [
     component: ArticleListComponent
   },
   {
-    path: "detail/:slug",
-    component: ArticleDetailComponent
+    path: ":slug",
+    canActivateChild: [ArticlesGuard],
+    children: [
+      { path: "", component: ArticleDetailComponent }
+    ]
   }
 
 ]

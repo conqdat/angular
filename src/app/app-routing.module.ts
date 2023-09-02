@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {ChildHomeComponent} from "./child-home/child-home.component";
 import {ArticleDetailComponent} from "./articles/article-detail/article-detail.component";
+import {ArticlesGuard} from "./guards/articles.guard";
 
 const routes: Routes = [
   {
@@ -10,12 +11,13 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: "articles", loadChildren: () => import('./articles/articles.module').then(m => m.ArticlesModule)
+    path: "articles", loadChildren: () => import('./articles/articles.module').then(m => m.ArticlesModule),
+    canActivate: [ArticlesGuard]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

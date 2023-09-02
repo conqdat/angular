@@ -3,6 +3,6 @@
 <ul>
   <li *ngFor="let article of articles$ | async">
     <h1>{{ article.title }}</h1>
-    <a [routerLink]="['/articles/detail', article.slug]">detail</a>
+    <a [routerLink]="['/articles', article.slug]">detail</a>
   </li>
 </ul>

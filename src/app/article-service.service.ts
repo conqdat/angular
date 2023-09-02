@@ -12,7 +12,7 @@ export class ArticleServiceService {
     return of(
       [
         { title: 'title 1', body: 'body 1', slug: 'title-1' },
-        { title: 'title 1', body: 'body 1', slug: 'title-1' },
+        { title: 'title 2', body: 'body 2', slug: 'title-2' },
       ]
     ).pipe(shareReplay(1))
   }
