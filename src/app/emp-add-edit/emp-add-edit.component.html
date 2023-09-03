@@ -1,39 +1,69 @@
 <div mat-dialog-title>
   <h1>Employee Form</h1>
 </div>
-<div mat-dialog-content class="content">
-  <div class="row">
-    <mat-form-field appearance="outline">
-      <mat-label>First Name</mat-label>
-      <input matInput type="text" placeholder="First Name"/>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Last Name</mat-label>
-      <input matInput type="text" placeholder="Last Name"/>
-    </mat-form-field>
+<form [formGroup]="emForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" placeholder="First Name" formControlName="firstName"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="Last Name" formControlName="lastName"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Email" formControlName="email"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-label>Gender</mat-label>
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Your Education</mat-label>
+        <mat-select formControlName="education">
+          <mat-option *ngFor="let adu of educations" [value]="adu | lowercase">
+            {{ adu }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Company</mat-label>
+        <input matInput placeholder="Company" formControlName="company"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Experience</mat-label>
+        <input matInput placeholder="Experience" type="number" formControlName="experience"/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Package</mat-label>
+        <input matInput placeholder="Package" type="number" formControlName="package"/>
+        <mat-hint>
+          In USD
+        </mat-hint>
+      </mat-form-field>
+    </div>
   </div>
-  <div class="row">
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="Email"/>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button mat-dialog-close type="button">Cancel</button>
+    <button mat-raised-button mat-dialog-close color="primary" type="submit">{{ data ? 'UPDATE' : 'SAVE' }}</button>
   </div>
-  <div class="row">
-    <mat-radio-group aria-label="Select an option">
-      <mat-label>Gender</mat-label>
-      <mat-radio-button value="male">Male</mat-radio-button>
-      <mat-radio-button value="female">Female</mat-radio-button>
-    </mat-radio-group>
-  </div>
-</div>
-<div mat-dialog-actions>
-  <button mat-raised-button>Cancel</button>
-  <button mat-raised-button color="primary">Save</button>
-</div>
+</form>
