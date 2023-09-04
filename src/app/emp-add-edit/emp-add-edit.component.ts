@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {EmployeeService} from "../services/employee.service";
 import {DialogRef} from "@angular/cdk/dialog";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
@@ -28,8 +28,14 @@ export class EmpAddEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.emForm = this._fb.group({
-      firstName: '',
-      lastName: '',
+      firstName: ['',
+        Validators.compose([
+          Validators.required,
+        ])],
+      lastName: ['',
+        Validators.compose([
+          Validators.required,
+        ])],
       email: '',
       dob: '',
       gender: '',

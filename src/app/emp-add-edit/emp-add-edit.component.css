@@ -14,3 +14,7 @@
 .action button {
   flex: 1;
 }
+.row mat-form-field {
+  margin-top: 20px;
+  margin-bottom: -20pxs;
+}

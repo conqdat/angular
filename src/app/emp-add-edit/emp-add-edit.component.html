@@ -13,6 +13,10 @@
         <input matInput type="text" placeholder="Last Name" formControlName="lastName"/>
       </mat-form-field>
     </div>
+    <span *ngIf="emForm.invalid && emForm.touched">
+        <mat-error *ngIf="emForm.controls['firstName'].hasError('required')">FirstName is required.</mat-error>
+        <mat-error *ngIf="emForm.controls['lastName'].hasError('required')">LastName is required.</mat-error>
+    </span>
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
@@ -64,6 +68,12 @@
   </div>
   <div mat-dialog-actions class="action">
     <button mat-raised-button mat-dialog-close type="button">Cancel</button>
-    <button mat-raised-button mat-dialog-close color="primary" type="submit">{{ data ? 'UPDATE' : 'SAVE' }}</button>
+    <button mat-raised-button
+            mat-dialog-close
+            [disabled]="emForm.invalid"
+            color="primary"
+            type="submit"
+    > {{ data ? 'UPDATE' : 'SAVE' }}
+    </button>
   </div>
 </form>
