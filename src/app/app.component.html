@@ -1,5 +1,14 @@
-<qrcode 
+<!-- <qrcode 
 (qrCodeURL)="'http://localhost:4200/user'" [qrdata]="'user'" [width]="256" [errorCorrectionLevel]="'M'">
-</qrcode>
+</qrcode> -->
+
+<div class="qrcodeImage">
+    <qrcode
+      [qrdata]="'http://localhost:4200/user'"
+      [errorCorrectionLevel]="'M'"
+      [title]="'A custom title attribute'"
+      [width]="300"
+    ></qrcode>
+  </div>
 
 <router-outlet></router-outlet>
