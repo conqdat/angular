@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-card>
+    <form class="signUpForm" [formGroup]="loginForm" (ngSubmit)="handleSubmit()" >
+      <mat-form-field>
+        <mat-icon matPrefix>email</mat-icon>
+        <input autofocus type="email" matInput placeholder="Email *" formControlName="usernameOrEmail">
+<!--        <div *ngIf="loginForm.invalid && loginForm.touched">-->
+<!--          <mat-error *ngIf="loginForm.controls.username.hasError('required')">Email is required.</mat-error>-->
+<!--        </div>-->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-icon matPrefix>lock_outline</mat-icon>
+        <input type="password" autocomplete="false" matInput placeholder="Password *" formControlName="password">
+      </mat-form-field>
+      <hr>
+      <div class="socialMediaFlex">
+        <button style="width:50%" [disabled]="loginForm.invalid" type="submit" mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

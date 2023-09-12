@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+mat-card {
+  width: 500px;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+}
