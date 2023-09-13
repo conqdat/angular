@@ -32,7 +32,6 @@ export class SignUpComponent {
 
   handleSubmit() {
     this.authService.register(this.signUpForm.value).subscribe((data) => {
-      console.log("sign-up: " + data)
       this.router.navigate(['/login'])
     })
   }

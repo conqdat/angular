@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
-
-
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -12,8 +11,11 @@ import {AuthService} from "../../services/auth.service";
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-  }
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {}
 
   loginForm = this.fb.group({
     'usernameOrEmail': '',
@@ -23,6 +25,8 @@ export class LoginComponent {
   handleSubmit() {
     return this.authService.login(this.loginForm.value).subscribe((data: any) => {
       localStorage.setItem('token', data.accessToken)
+      this.authService.setAuthenticated(true)
+      this.router.navigate(['/posts'])
     })
   }
 }

@@ -1,6 +1,12 @@
 <mat-toolbar color="primary">
-  <span class="app-title" [routerLink]="'/'" >My App</span>
+  <span class="app-title" [routerLink]="'/'">My App</span>
   <span class="example-spacer"></span>
-  <button mat-flat-button color="primary" [routerLink]="'/login'" >Login</button>
-  <button mat-flat-button color="primary" [routerLink]="'/sign-up'">Register</button>
+  <ng-container *ngIf="!isLogged; else loggedTemplate">
+    <button mat-flat-button color="primary" [routerLink]="'/login'">Login</button>
+    <button mat-flat-button color="primary" [routerLink]="'/sign-up'">Register</button>
+  </ng-container>
+  <ng-template #loggedTemplate>
+    <button mat-flat-button color="primary" [routerLink]="'/posts'">Posts</button>
+    <button mat-flat-button color="primary" (click)="handleLogout()">Logout</button>
+  </ng-template>
 </mat-toolbar>
