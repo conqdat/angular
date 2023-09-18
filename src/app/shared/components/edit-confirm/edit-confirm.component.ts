@@ -2,6 +2,7 @@ import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {PostService} from "../services/post.service";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Form, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-edit-confirm',
@@ -24,6 +25,7 @@ export class EditConfirmComponent implements OnInit {
     private postService: PostService,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: { postId: number },
+    private snackBar: MatSnackBar,
     private dialogRef: MatDialogRef<EditConfirmComponent>
   )
   {}
@@ -49,6 +51,10 @@ export class EditConfirmComponent implements OnInit {
   handleSubmit(form: FormGroup) {
     this.postService.updatePost(this.data.postId, form.value).subscribe((something) => {
       this.updatePosts.emit();
+      this.snackBar.open("update successful !", "OK", {
+        verticalPosition: "top",
+        horizontalPosition: "center",
+      })
       this.dialogRef.close();
     })
   }

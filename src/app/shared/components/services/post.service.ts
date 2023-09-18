@@ -22,6 +22,10 @@ export class PostService {
     return this.http.put(`${this.baseUrl}/` + id, data)
   }
 
+  createPost(data: any) {
+    return this.http.post(`${this.baseUrl}/`, data)
+  }
+
   deletePost(id: number) {
     return this.http.delete(`${this.baseUrl}/` + id, { responseType: 'text' })
   }
