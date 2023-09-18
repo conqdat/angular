@@ -14,6 +14,14 @@ export class PostService {
     return this.http.get<PostResponse>(this.baseUrl);
   }
 
+  getPostById(id: number) {
+    return this.http.get<PostResponse>(`${this.baseUrl}/` + id)
+  }
+
+  updatePost(id: number, data: any) {
+    return this.http.put(`${this.baseUrl}/` + id, data)
+  }
+
   deletePost(id: number) {
     return this.http.delete(`${this.baseUrl}/` + id, { responseType: 'text' })
   }
