@@ -6,7 +6,7 @@
     <button mat-flat-button color="primary" [routerLink]="'/sign-up'">Register</button>
   </ng-container>
   <ng-template #loggedTemplate>
-    <button mat-flat-button color="primary" [routerLink]="'/posts'">Posts</button>
+    <button *ngIf="!isPostUrl" mat-flat-button color="primary" [routerLink]="'/posts'">Posts</button>
     <button mat-flat-button color="primary" (click)="handleLogout()">Logout</button>
   </ng-template>
 </mat-toolbar>

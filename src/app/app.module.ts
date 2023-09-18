@@ -20,6 +20,10 @@ import {TokenInterceptorInterceptor} from "./interceptors/token-interceptor.inte
 import { PostListComponent } from './components/post-list/post-list.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { EditConfirmComponent } from './shared/components/edit-confirm/edit-confirm.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { DeleteConfirmComponent } from './shared/components/delete-confirm/delete-confirm.component';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -29,24 +33,29 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     SignUpComponent,
     WelcomeComponent,
     PostListComponent,
+    EditConfirmComponent,
+    DeleteConfirmComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    QRCodeModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        QRCodeModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatInputModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatDialogModule,
+        MatSnackBarModule
+    ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { panelClass: ['custom_dialog'] },}
   ],
   bootstrap: [AppComponent]
 })

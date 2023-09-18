@@ -1,5 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {NavigationEnd, NavigationStart, Router} from "@angular/router";
+import * as events from "events";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-header',
@@ -8,13 +11,21 @@ import {AuthService} from "../../services/auth.service";
 })
 export class HeaderComponent implements OnInit {
   isLogged = false;
+  isPostUrl = false
 
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService,
+              private readonly router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.authService.isAuthenticated$.subscribe((isAuthenticated) => {
       this.isLogged = isAuthenticated;
     });
+    this.router.events.subscribe((events) => {
+      if (events instanceof NavigationEnd) {
+        this.isPostUrl = events.url.includes("/posts")
+      }
+    })
   }
 
   handleLogout() {
