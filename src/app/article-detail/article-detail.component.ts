@@ -13,9 +13,7 @@ export class ArticleDetailComponent implements OnInit {
   constructor(private _route: ActivatedRoute, private _api: ArticleService) {}
 
   ngOnInit(): void {
-    let slug = this._route.snapshot.paramMap.get('slug');
-    if(slug) {
+    let slug = this._route.snapshot.paramMap.get('slug') as string;
       this.article$ = this._api.getArticleBySlug(slug);
     }
-  }
 }
