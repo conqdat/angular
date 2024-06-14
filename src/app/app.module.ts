@@ -8,20 +8,20 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ArticleModule } from './article/article.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleListComponent,
-    ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    MatButtonModule
+    MatButtonModule,
+    ArticleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
