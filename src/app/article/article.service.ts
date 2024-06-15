@@ -30,7 +30,7 @@ export class ArticleService {
   }
 
   getArticleBySlug(slug: string): Observable<Article> {
-    let article = Articles.find(x => x.slug === slug);
+    let article = Articles.find((x) => x.slug === slug);
     if (article) {
       return of(article).pipe(delay(500));
     } else {
