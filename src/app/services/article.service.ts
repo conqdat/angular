@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
-import { Article } from './model/article.model';
+import { Article } from '../models/article.model';
 
 const Articles: Article[] = [
   {

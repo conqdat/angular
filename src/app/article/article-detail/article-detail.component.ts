@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Article } from '../model/article.model';
-import { ArticleService } from '../article.service';
+import { Article } from '../../models/article.model';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-article-detail',
