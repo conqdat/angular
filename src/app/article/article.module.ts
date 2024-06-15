@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArticleRoutingModule } from './article-routing.module';
 import { ArticleListComponent } from '../article-list/article-list.component';
 import { ArticleDetailComponent } from '../article-detail/article-detail.component';
+import { RouterModule } from '@angular/router';
+import { articleRoutes } from './article.routes';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ArticleRoutingModule
-  ],
-  declarations: [ArticleListComponent, ArticleDetailComponent]
+  imports: [CommonModule, RouterModule.forChild(articleRoutes)],
+  declarations: [ArticleListComponent, ArticleDetailComponent],
 })
-export class ArticleModule { }
+export class ArticleModule {}
