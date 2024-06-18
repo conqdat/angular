@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     TestComponent,
     UserComponent,
     UserDetailComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

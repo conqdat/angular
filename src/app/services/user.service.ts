@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map, take, tap } from 'rxjs';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.URL);
+    return this.http.get<User[]>(this.URL).pipe(tap((res) => console.log(res)));
   }
 
   createUser(user: User): Observable<User> {
