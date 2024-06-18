@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CanAccessArticle } from './guards/article.guard';
 import { SignInRfComponent } from './sign-in-rf/sign-in-rf.component';
 import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,11 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
+  {
+    path: 'user',
+    component: UserComponent,
+  },
+  { path: 'user/:id', component: UserDetailComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

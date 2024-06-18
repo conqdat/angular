@@ -12,9 +12,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RegisterComponent } from './register/register.component';
+import { TestComponent } from './test/test.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, SignInRfComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    SignInRfComponent,
+    RegisterComponent,
+    TestComponent,
+    UserComponent,
+    UserDetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
@@ -25,6 +40,12 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
