@@ -15,9 +15,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { HeaderComponent } from './components/partials/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
