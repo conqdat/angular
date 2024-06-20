@@ -14,6 +14,6 @@ export class HeaderComponent {
   logout(){  }
 
   get isAuth(){
-    return this.user.token;
+    return "";
   }
 }

@@ -16,9 +16,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './components/partials/header/header.component';
+import {HomeComponent} from "./components/pages/home/home.component";
+import {NgOptimizedImage} from "@angular/common";
+import {RatingModule} from "ng-starrating";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
@@ -35,6 +38,8 @@ import { HeaderComponent } from './components/partials/header/header.component';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    NgOptimizedImage,
+    RatingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
