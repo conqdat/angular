@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -19,9 +19,10 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import {HomeComponent} from "./components/pages/home/home.component";
 import {NgOptimizedImage} from "@angular/common";
 import {RatingModule} from "ng-starrating";
+import { SearchComponent } from './components/partials/search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
@@ -40,6 +41,7 @@ import {RatingModule} from "ng-starrating";
     MatIconModule,
     NgOptimizedImage,
     RatingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
