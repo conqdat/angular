@@ -14,7 +14,7 @@ interface UserInterface {
 export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.user$.subscribe((data) => {
-      console.log(data);
+      // console.log(data);
     })
 
     setTimeout(() => {
