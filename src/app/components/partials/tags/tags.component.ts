@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Tag} from "../../../shared/models/Tag";
 import {FoodService} from "../../../services/food.service";
 import {sample_tags} from "../../../../data";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-tags',
@@ -11,6 +12,8 @@ import {sample_tags} from "../../../../data";
 export class TagsComponent {
   tags !: Tag[];
   constructor(private foodService: FoodService) {
-    this.tags = this.foodService.getAllTags();
+    this.foodService.getAllTags().subscribe((tags: Tag[]) => {
+      this.tags = tags;
+    });
   }
 }

@@ -47,6 +47,7 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
     NgOptimizedImage,
     RatingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

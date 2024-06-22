@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Cart } from '../shared/models/Cart';
 import { Food } from '../shared/models/Food';
 import { CartItem } from '../shared/models/CartItem';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
