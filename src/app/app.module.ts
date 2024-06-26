@@ -26,9 +26,14 @@ import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { ToastrModule } from 'ngx-toastr';
+import {InputContainerComponent} from "./components/partials/input-container/input-container.component";
+import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
+import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent, TagsComponent, FoodPageComponent, CartPageComponent, TitleComponent, NotFoundComponent, LoginPageComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent, TagsComponent, FoodPageComponent,
+    InputContainerComponent, CartPageComponent, TitleComponent, NotFoundComponent, LoginPageComponent, InputValidationComponent, TextInputComponent],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
@@ -48,10 +53,11 @@ import { ToastrModule } from 'ngx-toastr';
     NgOptimizedImage,
     FormsModule,
     ToastrModule.forRoot({
-      timeOut:3000,
-      positionClass:'toast-bottom-right',
-      newestOnTop:false
-    })
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      newestOnTop: false
+    }),
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
