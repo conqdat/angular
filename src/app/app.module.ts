@@ -30,10 +30,11 @@ import {InputContainerComponent} from "./components/partials/input-container/inp
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent, TagsComponent, FoodPageComponent,
-    InputContainerComponent, CartPageComponent, TitleComponent, NotFoundComponent, LoginPageComponent, InputValidationComponent, TextInputComponent],
+    InputContainerComponent, CartPageComponent, TitleComponent, NotFoundComponent, LoginPageComponent, InputValidationComponent, TextInputComponent, RegisterPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule, // import routes
